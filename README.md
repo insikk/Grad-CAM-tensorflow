@@ -3,6 +3,8 @@
 This is tensorflow version of demo for Grad-CAM. I used vgg16 for demo because this model is very popular CNN model.
 However grad-cam can be used with any CNN model. Just modify convolution layer in my demo code.
 
+![Preview](https://github.com/insikk/Grad-CAM-tensorflow/blob/master/image_preview.png?raw=true)
+
 See [python notebook](https://github.com/insikk/Grad-CAM-tensorflow/blob/master/gradCAM_tensorflow_demo.ipynb) to see demo of this repository.
 >To use the VGG networks in this demo, the npy files for [VGG16 NPY](https://mega.nz/#!YU1FWJrA!O1ywiCS2IiOlUCtCpI6HTJOMrneN-Qdv3ywQP5poecM) has to be downloaded.
 
