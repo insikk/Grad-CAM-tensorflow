@@ -1,10 +1,12 @@
 # Grad-CAM-tensorflow
 
-This is tensorflow version of demo for Grad-CAM. Thanks for the awesome machine learning commuity for providing many building blocks. 
+This is tensorflow version of demo for Grad-CAM. I used vgg16 for demo because this model is very popular CNN model.
+However grad-cam can be used with any CNN model. Just modify convolution layer in my demo code.
 
 See [python notebook](https://github.com/insikk/Grad-CAM-tensorflow/blob/master/gradCAM_tensorflow_demo.ipynb) to see demo of this repository.
+>To use the VGG networks in this demo, the npy files for [VGG16 NPY](https://mega.nz/#!YU1FWJrA!O1ywiCS2IiOlUCtCpI6HTJOMrneN-Qdv3ywQP5poecM) has to be downloaded.
 
-## Grad-CAM: Gradient-weighted Class Activation Mapping
+## [Origial Paper] Grad-CAM: Gradient-weighted Class Activation Mapping
 
 **[Grad-CAM: Why did you say that? Visual Explanations from Deep Networks via Gradient-based Localization][7]**  
 Ramprasaath R. Selvaraju, Abhishek Das, Ramakrishna Vedantam, Michael Cogswell, Devi Parikh, Dhruv Batra  
@@ -13,8 +15,9 @@ Ramprasaath R. Selvaraju, Abhishek Das, Ramakrishna Vedantam, Michael Cogswell, 
 ![Overview](http://i.imgur.com/JaGbdZ5.png)
 
 
-
 ## Acknowledgement
+
+Thanks for the awesome machine learning commuity for providing many building blocks. 
 
 ### GradCAM implementation in caffe
 [https://github.com/ramprs/grad-cam](https://github.com/ramprs/grad-cam)
