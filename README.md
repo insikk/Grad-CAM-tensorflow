@@ -2,7 +2,7 @@
 
 This is tensorflow version of demo for Grad-CAM. Thanks for the awesome machine learning commuity for providing many building blocks. 
 
-See [python notebook]() to see demo of this repository.
+See [python notebook](https://github.com/insikk/Grad-CAM-tensorflow/blob/master/gradCAM_tensorflow_demo.ipynb) to see demo of this repository.
 
 ## Grad-CAM: Gradient-weighted Class Activation Mapping
 
