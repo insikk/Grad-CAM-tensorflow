@@ -6,7 +6,7 @@ However grad-cam can be used with any CNN model. Just modify convolution layer i
 ![Preview](https://github.com/insikk/Grad-CAM-tensorflow/blob/master/image_preview.png?raw=true)
 
 See [python notebook](https://github.com/insikk/Grad-CAM-tensorflow/blob/master/gradCAM_tensorflow_demo.ipynb) to see demo of this repository.
->To use the VGG networks in this demo, the npy files for [VGG16 NPY](https://mega.nz/#!YU1FWJrA!O1ywiCS2IiOlUCtCpI6HTJOMrneN-Qdv3ywQP5poecM) has to be downloaded.
+>To use the VGG networks in this demo, the npy files for [VGG16 NPY](ftp://mi.eng.cam.ac.uk/pub/mttt2/models/vgg16.npy) has to be downloaded.
 
 ## [Origial Paper] Grad-CAM: Gradient-weighted Class Activation Mapping
 
@@ -15,6 +15,17 @@ Ramprasaath R. Selvaraju, Abhishek Das, Ramakrishna Vedantam, Michael Cogswell, 
 [https://arxiv.org/abs/1610.02391][7]
 
 ![Overview](http://i.imgur.com/JaGbdZ5.png)
+
+# Setup
+
+```
+export PYTHONPATH=$PYTHONPATH:`pwd`/slim
+```
+
+# TODO
+
+[ ] Make ResNet Inference work. 
+
 
 
 ## Acknowledgement

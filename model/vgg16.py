@@ -17,7 +17,7 @@ class Vgg16:
             vgg16_npy_path = path
             print(path)
 
-        self.data_dict = np.load(vgg16_npy_path, encoding='latin1').item()        
+        self.data_dict = np.load(vgg16_npy_path, encoding='latin1').item()
         self.trainable = trainable
         print("npy file loaded")
 
@@ -33,15 +33,15 @@ class Vgg16:
         rgb_scaled = rgb * 255.0
 
         # Convert RGB to BGR
-        red, green, blue = tf.split(3, 3, rgb_scaled)
+        red, green, blue = tf.split(rgb_scaled, 3, 3)
         assert red.get_shape().as_list()[1:] == [224, 224, 1]
         assert green.get_shape().as_list()[1:] == [224, 224, 1]
         assert blue.get_shape().as_list()[1:] == [224, 224, 1]
-        bgr = tf.concat(3, [
+        bgr = tf.concat([
             blue - VGG_MEAN[0],
             green - VGG_MEAN[1],
             red - VGG_MEAN[2],
-        ])
+        ], 3)
         assert bgr.get_shape().as_list()[1:] == [224, 224, 3]
 
         self.conv1_1 = self.conv_layer(bgr, "conv1_1")
@@ -70,7 +70,7 @@ class Vgg16:
         self.fc6 = self.fc_layer(self.pool5, "fc6")
         assert self.fc6.get_shape().as_list()[1:] == [4096]
         self.relu6 = tf.nn.relu(self.fc6)
-        
+
         if train_mode is not None:
             self.relu6 = tf.cond(train_mode, lambda: tf.nn.dropout(self.relu6, 0.5), lambda: self.relu6)
         elif self.trainable:
@@ -79,7 +79,7 @@ class Vgg16:
 
         self.fc7 = self.fc_layer(self.relu6, "fc7")
         self.relu7 = tf.nn.relu(self.fc7)
-        
+
         if train_mode is not None:
             self.relu7 = tf.cond(train_mode, lambda: tf.nn.dropout(self.relu7, 0.5), lambda: self.relu7)
         elif self.trainable:
@@ -135,3 +135,4 @@ class Vgg16:
 
     def get_fc_weight(self, name):
         return tf.Variable(self.data_dict[name][0], name="weights")
+
