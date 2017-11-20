@@ -1,0 +1,8 @@
+# model weight
+*.ckpt
+
+# Python junk
+__pycache__
+.ipynb_checkpoints
+*.npy
+*.pyc
