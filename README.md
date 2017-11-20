@@ -6,7 +6,12 @@ However grad-cam can be used with any CNN model. Just modify convolution layer i
 ![Preview](https://github.com/insikk/Grad-CAM-tensorflow/blob/master/image_preview.png?raw=true)
 
 See [python notebook](https://github.com/insikk/Grad-CAM-tensorflow/blob/master/gradCAM_tensorflow_demo.ipynb) to see demo of this repository.
->To use the VGG networks in this demo, the npy files for [VGG16 NPY](ftp://mi.eng.cam.ac.uk/pub/mttt2/models/vgg16.npy) has to be downloaded.
+>To use VGG networks in this demo, the npy files for [VGG16 NPY](ftp://mi.eng.cam.ac.uk/pub/mttt2/models/vgg16.npy) has to be downloaded.
+
+>To use ResNet-v1-50 or ResNet-v1-101, download weight from https://github.com/tensorflow/models/tree/master/research/slim
+
+
+
 
 ## [Origial Paper] Grad-CAM: Gradient-weighted Class Activation Mapping
 
@@ -15,6 +20,10 @@ Ramprasaath R. Selvaraju, Abhishek Das, Ramakrishna Vedantam, Michael Cogswell, 
 [https://arxiv.org/abs/1610.02391][7]
 
 ![Overview](http://i.imgur.com/JaGbdZ5.png)
+
+# Requirements
+
+* GPU Memory: 6GB or higher to run VGG16, and ResNet101 (You may able to run ResNet50 with less than 6GB)
 
 # Setup
 
