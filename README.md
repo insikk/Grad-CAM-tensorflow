@@ -1,7 +1,7 @@
 # Grad-CAM-tensorflow
 
-This is tensorflow version of demo for Grad-CAM. I used vgg16 for demo because this model is very popular CNN model.
-However grad-cam can be used with any CNN model. Just modify convolution layer in my demo code.
+This is tensorflow version of demo for Grad-CAM. I used ResNet-v1-101, ResNet-v1-50, and vgg16 for demo because this models are very popular CNN model.
+However grad-cam can be used with any other CNN models. Just modify convolution layer in my demo code.
 
 ![Preview](https://github.com/insikk/Grad-CAM-tensorflow/blob/master/image_preview.png?raw=true)
 
@@ -11,6 +11,7 @@ See [python notebook](https://github.com/insikk/Grad-CAM-tensorflow/blob/master/
 >To use ResNet-v1-50 or ResNet-v1-101, download weight from https://github.com/tensorflow/models/tree/master/research/slim
 
 
+**Any Contributions are Welcome**
 
 
 ## [Origial Paper] Grad-CAM: Gradient-weighted Class Activation Mapping
@@ -30,12 +31,6 @@ Ramprasaath R. Selvaraju, Abhishek Das, Ramakrishna Vedantam, Michael Cogswell, 
 ```
 export PYTHONPATH=$PYTHONPATH:`pwd`/slim
 ```
-
-# TODO
-
-[ ] Make ResNet Inference work. 
-
-
 
 ## Acknowledgement
 
