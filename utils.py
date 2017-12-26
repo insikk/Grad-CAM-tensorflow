@@ -82,14 +82,13 @@ def print_prob(prob, file_path):
 
 
 def visualize(image, conv_output, conv_grad, gb_viz):
-    
     output = conv_output           # [7,7,512]
     grads_val = conv_grad          # [7,7,512]
-    print("grads_val shape:", grads_val.shape)    
-    print("gb_viz shape:", gb_viz.shape)    
+    print("grads_val shape:", grads_val.shape)
+    print("gb_viz shape:", gb_viz.shape)
 
-    weights = np.mean(grads_val, axis = (0, 1)) 			# [512]
-    cam = np.ones(output.shape[0 : 2], dtype = np.float32)	# [7,7]   
+    weights = np.mean(grads_val, axis = (0, 1)) # alpha_k, [512]
+    cam = np.zeros(output.shape[0 : 2], dtype = np.float32)	# [7,7]
     
 
     # Taking a weighted average
@@ -98,15 +97,13 @@ def visualize(image, conv_output, conv_grad, gb_viz):
 
     # Passing through ReLU
     cam = np.maximum(cam, 0)
-    cam = cam / np.max(cam) # scale 0 to 1.0    
+    cam = cam / np.max(cam) # scale 0 to 1.0
     cam = resize(cam, (224,224), preserve_range=True)
-    # print(cam)
-    
-    
-    img = image.astype(float)    
+
+    img = image.astype(float)
     img -= np.min(img)
     img /= img.max()
-    # print(img)    #        
+    # print(img)
     cam_heatmap = cv2.applyColorMap(np.uint8(255*cam), cv2.COLORMAP_JET)
     cam_heatmap = cv2.cvtColor(cam_heatmap, cv2.COLOR_BGR2RGB)
     # cam = np.float32(cam) + np.float32(img)
