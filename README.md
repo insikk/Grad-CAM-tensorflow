@@ -1,5 +1,7 @@
 # Grad-CAM-tensorflow
 
+**NOTE: There is another awesome visualization of CNN called [CNN-Fixations](https://github.com/val-iisc/cnn-fixations), which involvs only forward pass. Demo code is available for Caffe and Tensorflow ResNet, Vgg. Please check it out.**
+
 This is tensorflow version of demo for Grad-CAM. I used ResNet-v1-101, ResNet-v1-50, and vgg16 for demo because this models are very popular CNN model.
 However grad-cam can be used with any other CNN models. Just modify convolution layer in my demo code.
 
